@@ -1,0 +1,21 @@
+services:
+  mysql:
+    image: mysql:lts
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: incident_db
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: appsecret
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - backend-network
+networks:
+  backend-network:
+    driver: bridge
+  frontend-network:
+    driver: bridge
+volumes:
+  mysql-data: {}
