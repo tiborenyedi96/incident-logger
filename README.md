@@ -1,4 +1,4 @@
-# Simple incident logger with docker
+# Simple incident logger
 
 MySQL database scheme description:
 
