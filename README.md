@@ -1,6 +1,6 @@
 # Simple incident logger with docker
 
-#MySQL database scheme description:
+MySQL database scheme description:
 
 Database: incident_db
 Table: incidents
