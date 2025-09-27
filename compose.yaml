@@ -1,6 +1,7 @@
 services:
   mysql:
-    image: mysql:lts
+    image: mysql:8.4
+    container_name: mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: example
@@ -12,10 +13,26 @@ services:
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - backend-network
+
+  api:
+    build: ./backend
+    container_name: incident_API
+    restart: always
+    depends_on:
+      - mysql
+    environment:
+      DB_HOST: mysql
+      DB_NAME: incident_db
+      DB_USER: appuser
+      DB_PASS: appsecret
+    ports:
+      - "8000:8000"
+    networks:
+      - backend-network
+
 networks:
   backend-network:
     driver: bridge
-  frontend-network:
-    driver: bridge
+
 volumes:
   mysql-data: {}
