@@ -1,16 +1,16 @@
-# Simple incident logger
+# Simple incident logger<br/>
 
-MySQL database scheme description:
+MySQL database scheme description:<br/>
 
-Database: incident_db
-Table: incidents
-Charset: utf8mb4
-Collation: utf8mb4_general_ci
-Engine: InnoDB
-
-id: int
-title: varchar(64)
-description: text
-severity: varchar(6)
-status: varchar(12)
-created_at: datetime
+Database: incident_db<br/>
+Table: incidents<br/>
+Charset: utf8mb4<br/>
+Collation: utf8mb4_general_ci<br/>
+Engine: InnoDB<br/>
+<br/>
+id: int<br/>
+title: varchar(64)<br/>
+description: text<br/>
+severity: varchar(6)<br/>
+status: varchar(12)<br/>
+created_at: datetime<br/>
