@@ -1,0 +1,14 @@
+FROM python:3-slim
+
+RUN pip install --no-cache-dir SQLAlchemy
+RUN pip install --no-cache-dir "fastapi[standard]"
+RUN pip install --no-cache-dir pymysql
+RUN pip install --no-cache-dir cryptography
+
+COPY main.py ./app/
+EXPOSE 8000
+
+RUN useradd app
+USER app
+
+CMD ["fastapi", "run", "app/main.py", "--port", "8000"]
