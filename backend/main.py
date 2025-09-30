@@ -1,5 +1,4 @@
-from fastapi import FastAPI, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
+from fastapi import FastAPI
 from sqlalchemy import create_engine, text
 from pydantic import BaseModel
 from enum import Enum
@@ -32,14 +31,6 @@ class IncidentCreate(BaseModel):
     severity: Severity
 
 app = FastAPI()
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
-    allow_credentials=True,
-    allow_methods=["GET", "POST", "OPTIONS"],
-    allow_headers=["*"],
-)
 
 @app.get("/incidents", response_model=list[Incident])
 def read_incidents():

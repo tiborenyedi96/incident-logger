@@ -6,7 +6,6 @@ RUN pip install --no-cache-dir pymysql
 RUN pip install --no-cache-dir cryptography
 
 COPY main.py ./app/
-EXPOSE 8000
 
 RUN useradd app
 USER app
