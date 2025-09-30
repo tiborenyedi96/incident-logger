@@ -1,11 +1,12 @@
-<script setup></script>
+<script setup>
+import { RouterView, RouterLink, routeLocationKey } from 'vue-router';
+import Menu from '../components/Menu.vue';
+import Incident from '../components/Incident.vue';
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <Menu/>
+  <main>
+    <RouterView/>
+  </main>
 </template>
-
-<style scoped></style>
