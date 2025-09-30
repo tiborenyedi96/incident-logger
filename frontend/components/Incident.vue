@@ -1,22 +1,41 @@
+<!-- src/components/Incident.vue -->
 <template>
-  <div class="incident">
-    <div class="incident-header">
-      <p class="title">Database outage</p>
+  <article class="incident">
+    <header class="incident-header">
+      <h3 class="title">{{ incident.title || 'Untitled incident' }}</h3>
       <div class="badges">
-        <span class="badge error">Critical</span>
-        <span class="badge info">Open</span>
+        <span class="badge" :class="severityClass">{{ incident.severity || 'N/A' }}</span>
+        <span class="badge" :class="statusClass">{{ incident.status || 'N/A' }}</span>
       </div>
-    </div>
+    </header>
 
-    <p class="description">
-      Connection to main DB cluster is failing for all services.
-    </p>
+    <p class="description">{{ incident.description || '—' }}</p>
 
-    <div class="incident-footer">
-      <span class="meta">Created at: 2025-09-30 10:32</span>
-    </div>
-  </div>
+    <footer class="incident-footer">
+      <span class="meta">Created at: {{ formattedDate }}</span>
+    </footer>
+  </article>
 </template>
+
+<script setup>
+const props = defineProps({
+  incident: { type: Object, required: true }
+})
+
+const formattedDate = new Date(props.incident.created_at).toLocaleString()
+
+const severityClass = ({
+  HIGH: 'error',
+  MEDIUM: 'warning',
+  LOW: 'success'
+}[props.incident.severity]) || 'info'
+
+const statusClass = ({
+  RESOLVED: 'success',
+  IN_PROGRESS: 'info',
+  OPEN: 'error'
+}[props.incident.status]) || 'info'
+</script>
 
 <style scoped>
 .incident {
@@ -51,19 +70,10 @@
   line-height: 1.6;
 }
 
-.incident-footer {
-  margin-top: 0.75rem;
-}
+.incident-footer { margin-top: 0.75rem; }
+.meta { font-size: 1rem; color: #6B7280; }
 
-.meta {
-  font-size: 1rem;
-  color: #6B7280;
-}
-
-.badges {
-  display: flex;
-  gap: 0.75rem;
-}
+.badges { display: flex; gap: 0.75rem; }
 
 .badge {
   display: inline-block;

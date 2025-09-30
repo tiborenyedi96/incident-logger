@@ -1,17 +1,17 @@
-const BASE_URL = 'http://localhost:8000'; // FastAPI default
+const BASE_URL = '/api';
 
 export async function getIncidents() {
-  const res = await fetch(`${BASE_URL}/incidents`);
-  if (!res.ok) throw new Error(`GET /incidents failed: ${res.status}`);
-  return res.json();
+  const r = await fetch(`${BASE_URL}/incidents`);
+  if (!r.ok) throw new Error(`GET /incidents failed: ${r.status}`);
+  return r.json();
 }
 
 export async function createIncident(payload) {
-  const res = await fetch(`${BASE_URL}/incidents`, {
+  const r = await fetch(`${BASE_URL}/incidents`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload),
   });
-  if (!res.ok) throw new Error(`POST /incidents failed: ${res.status}`);
-  return res.json();
+  if (!r.ok) throw new Error(`POST /incidents failed: ${r.status}`);
+  return r.json();
 }
