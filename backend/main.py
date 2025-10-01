@@ -4,7 +4,6 @@ from pydantic import BaseModel
 from enum import Enum
 from datetime import datetime
 
-#joining to the mysql db
 engine = create_engine("mysql+pymysql://appuser:appsecret@mysql:3306/incident_db")
 
 class Severity(str, Enum):
@@ -38,6 +37,10 @@ def read_incidents():
         result = mysql_connection.execute(text("SELECT * FROM incidents ORDER BY created_at DESC;"))
         rows = result.mappings().all()
         return rows
+
+@app.get("/health", status_code=200)
+def check_health():
+    return {"Status" : "OK"}
 
 @app.post("/incidents", response_model=Incident, status_code=201)
 def create_incident(payload: IncidentCreate):
