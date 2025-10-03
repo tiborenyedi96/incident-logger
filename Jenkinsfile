@@ -13,7 +13,6 @@ pipeline {
                 sh '''
                 cd backend/
                 docker build .
-                sh 'docker images'
                 '''
                 echo 'Backend build finished'
             }
@@ -29,7 +28,6 @@ pipeline {
                 sh '''
                 cd frontend/
                 docker build .
-                sh 'docker images'
                 '''
                 echo 'Frontend build finished'
             }
