@@ -9,17 +9,29 @@ pipeline {
                 }
             }
             steps {
-                echo 'Building backend'
+                echo 'Building backend service'
                 sh '''
                 cd backend/
-                ls -la
+                docker build .
+                sh 'docker images'
                 '''
+                echo 'Backend build finished'
             }
         }
-    }
-    post {
-        always {
-            sh 'docker images'
-        }
+        stage('Frontend build')
+            agent {
+                docker {
+                    image 'node:20-alpine'
+                }
+            }
+            steps {
+                echo 'Building frontend service'
+                sh '''
+                cd frontend/
+                docker build .
+                sh 'docker images'
+                '''
+                echo 'Frontend build finished'
+            }
     }
 }
