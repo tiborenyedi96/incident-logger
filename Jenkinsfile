@@ -17,20 +17,5 @@ pipeline {
                 echo 'Backend build finished'
             }
         }
-        stage('Frontend build') {
-            agent {
-                docker {
-                    image 'node:20-alpine'
-                }
-            }
-            steps {
-                echo 'Building frontend service'
-                sh '''
-                cd frontend/
-                docker build .
-                '''
-                echo 'Frontend build finished'
-            }
-        }
     }
 }
