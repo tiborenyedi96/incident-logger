@@ -2,10 +2,28 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Backend build') {
             steps {
-                echo 'Hello World'
+                echo 'Building backend'
+                sh '''
+                cd backend/
+                docker build .
+                '''
             }
+        }
+        stage ('Frontend build') {
+            steps {
+                echo 'Building frontend'
+                sh '''
+                cd frontend/
+                docker build .
+                '''
+            }
+        }
+    }
+    post {
+        always {
+            sh 'docker images'
         }
     }
 }
