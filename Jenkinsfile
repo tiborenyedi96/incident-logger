@@ -12,16 +12,7 @@ pipeline {
                 echo 'Building backend'
                 sh '''
                 cd backend/
-                docker build .
-                '''
-            }
-        }
-        stage ('Frontend build') {
-            steps {
-                echo 'Building frontend'
-                sh '''
-                cd frontend/
-                docker build .
+                ls -la
                 '''
             }
         }
