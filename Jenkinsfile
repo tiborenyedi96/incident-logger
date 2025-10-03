@@ -18,7 +18,7 @@ pipeline {
                 echo 'Backend build finished'
             }
         }
-        stage('Frontend build')
+        stage('Frontend build') {
             agent {
                 docker {
                     image 'node:20-alpine'
@@ -33,5 +33,6 @@ pipeline {
                 '''
                 echo 'Frontend build finished'
             }
+        }
     }
 }
