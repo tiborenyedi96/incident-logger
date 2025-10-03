@@ -3,11 +3,7 @@ pipeline {
 
     stages {
         stage('Backend build') {
-            agent {
-                docker {
-                    image 'python:3-slim'
-                }
-            }
+            agent any
             steps {
                 echo 'Building backend service'
                 sh '''
