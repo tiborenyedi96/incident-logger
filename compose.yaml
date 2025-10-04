@@ -13,7 +13,7 @@ services:
     networks: [backend]
 
   api:
-    build: tenyedi96/incident-logger-backend:latest
+    image: tenyedi96/incident-logger-backend:latest
     restart: always
     depends_on: [mysql]
     environment:
@@ -21,7 +21,7 @@ services:
     networks: [backend, frontend]
 
   frontend:
-    iamge: tenyedi96/incident-logger-frontend:latest
+    image: tenyedi96/incident-logger-frontend:latest
     restart: always
     depends_on: [api]
     ports:
