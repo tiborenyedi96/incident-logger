@@ -21,7 +21,7 @@ pipeline {
                 sh '''
                 docker --version
                 cd frontend/
-                docker build .
+                docker build -t frontend-service:latest .
                 '''
                 echo 'Frontend build finished'
             }
