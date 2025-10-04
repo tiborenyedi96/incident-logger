@@ -9,7 +9,7 @@ pipeline {
                 sh '''
                 docker --version
                 cd backend/
-                docker build .
+                docker build -t backend-service:latest .
                 '''
                 echo 'Backend build finished'
             }
