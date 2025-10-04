@@ -20,8 +20,7 @@ pipeline {
                 echo 'Building backend service...'
                 sh '''
                 docker --version
-                cd backend/
-                docker build -t backend-service:latest .
+                docker build -t $DOCKERHUB_USR/backend-service:latest backend
                 docker push $DOCKERHUB_USR/backend-service:latest
                 '''
                 echo 'Backend build finished...'
@@ -33,8 +32,7 @@ pipeline {
                 echo 'Building frontend service...'
                 sh '''
                 docker --version
-                cd frontend/
-                docker build -t frontend-service:latest .
+                docker build -t $DOCKERHUB_USR/frontend-service:latest frontend
                 docker push $DOCKERHUB_USR/frontend-service:latest
                 '''
                 echo 'Frontend build finished...'
