@@ -8,7 +8,7 @@ pipeline {
                 echo 'Building backend service'
                 sh '''
                 cd backend/
-                docker build .
+                docker build -t backend-service:latest .
                 '''
                 echo 'Backend build finished'
             }
@@ -19,7 +19,7 @@ pipeline {
                 echo 'Building frontend service'
                 sh '''
                 cd frontend/
-                docker build .
+                docker build -t frontend-service:latest .
                 '''
                 echo 'Frontend build finished'
             }
