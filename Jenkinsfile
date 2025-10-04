@@ -23,7 +23,7 @@ pipeline {
                 docker build -t $DOCKERHUB_USR/incident-logger-backend:latest backend
                 docker push $DOCKERHUB_USR/incident-logger-backend:latest
                 '''
-                echo 'Backend build finished...'
+                echo 'Backend build and push finished...'
             }
         }
         stage('Frontend build & push') {
@@ -35,7 +35,7 @@ pipeline {
                 docker build -t $DOCKERHUB_USR/incident-logger-frontend:latest frontend
                 docker push $DOCKERHUB_USR/incident-logger-frontend:latest
                 '''
-                echo 'Frontend build finished...'
+                echo 'Frontend build and push finished...'
             }
         }
     }
