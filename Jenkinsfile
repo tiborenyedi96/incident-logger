@@ -7,8 +7,9 @@ pipeline {
             steps {
                 echo 'Building backend service'
                 sh '''
+                docker --version
                 cd backend/
-                docker build -t backend-service:latest .
+                docker build .
                 '''
                 echo 'Backend build finished'
             }
@@ -18,8 +19,9 @@ pipeline {
             steps {
                 echo 'Building frontend service'
                 sh '''
+                docker --version
                 cd frontend/
-                docker build -t frontend-service:latest .
+                docker build .
                 '''
                 echo 'Frontend build finished'
             }
