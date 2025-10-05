@@ -14,7 +14,7 @@ pipeline {
                 '''
             }
         }
-        stage('Backend build & push') {
+        stage('Backend: build & push') {
             agent any
             steps {
                 echo 'Building backend service...'
@@ -26,7 +26,7 @@ pipeline {
                 echo 'Backend build and push finished...'
             }
         }
-        stage('Frontend build & push') {
+        stage('Frontend: build & push') {
             agent any
             steps {
                 echo 'Building frontend service...'
