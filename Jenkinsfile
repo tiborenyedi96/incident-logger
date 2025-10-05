@@ -5,8 +5,8 @@ pipeline {
     }
 
     stages {
+        agent any
         stage('Dockerhub login') {
-            agent any
             steps {
                 echo 'Dockerhub login...'
                 sh '''
@@ -15,7 +15,6 @@ pipeline {
             }
         }
         stage('Backend build & push') {
-            agent any
             steps {
                 echo 'Building backend service...'
                 sh '''
@@ -27,7 +26,6 @@ pipeline {
             }
         }
         stage('Frontend build & push') {
-            agent any
             steps {
                 echo 'Building frontend service...'
                 sh '''
