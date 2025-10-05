@@ -5,19 +5,6 @@ pipeline {
     }
 
     stages {
-        stage('Docker env reset') {
-            steps {
-                sh '''
-                echo "Before reset:"
-                env | grep -E 'DOCKER|TLS|CERT' || true
-                unset DOCKER_HOST
-                unset DOCKER_TLS_VERIFY
-                unset DOCKER_CERT_PATH
-                env | grep -E 'DOCKER|TLS|CERT' || true
-                '''
-                }
-        }
-
         stage('Dockerhub login') {
             agent any
             steps {
