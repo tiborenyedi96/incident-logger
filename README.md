@@ -1,4 +1,4 @@
-# Simple incident logger<br/>
+# Simple Incident Logger<br/>
 
 This is a simple incident logger application with very minimal functionality.<br/>My main goal is to learn more about Docker, Jenkins and Kubernetes so the application is basically just an example to have something to deploy.<br/>I will include more useful features and will try to create a minimal but functional ticketing system once I am satisfied with the devops part.
 
