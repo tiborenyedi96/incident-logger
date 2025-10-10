@@ -80,8 +80,9 @@ kubectl delete deploy,svc -l application=incident-logger
 ```
 ---
 
-🧩 Future plans
-- Replace NodePort with Ingress
-- Add user authentication to the application
-- Extend the frontend with ticket closing functionality, priority modification, assigning tickets to users and more...
-- Deploy the application on an AWS EKS cluster and replace MySQL with an RDS database
+<h3>🧩 Future plans</h3>
+- Replace NodePort with Ingress<br/>
+- Add user authentication to support a multi-user setup<br/>
+- Extend the frontend with ticket closing, priority modification, and ticket assignment features<br/>
+- Deploy the application on AWS EKS and migrate MySQL to AWS RDS<br/>
+- Utilize AWS SNS and SQS to offload the database and send email notifications for created incidents<br/>
