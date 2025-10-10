@@ -86,4 +86,5 @@ kubectl delete deploy,svc -l application=incident-logger
 - Add user authentication to support a multi-user setup<br/>
 - Extend the frontend with ticket closing, priority modification, and ticket assignment features<br/>
 - Deploy the application on AWS EKS and migrate MySQL to AWS RDS<br/>
+- Refactoring the Jenkins pipeline to push the images to AWS ECR and also deploy them automatically
 - Utilize AWS SNS and SQS to offload the database and send email notifications for created incidents<br/>
