@@ -11,14 +11,16 @@ A simple API developed with fastAPI. Only the frontend can interact with it but 
 <h2>MySQL database:</h2><br/>
 This is the database for storing and serving the current incidents.<br/>
 
-<h3>Database scheme:</h3>
-id: int<br/>
-title: varchar(64)<br/>
-description: text<br/>
-severity: varchar(6)<br/>
-status: varchar(12)<br/>
-created_at: datetime<br/>
+<h3>Database schema</h3>
 
+```sql
+id INT AUTO_INCREMENT PRIMARY KEY,
+title VARCHAR(64),
+description TEXT,
+severity VARCHAR(6),
+status VARCHAR(12),
+created_at DATETIME
+```
 <h2>How to run with Docker compose:</h2>
 Install <a href="https://docs.docker.com">Docker</a> on your current operating system by following the instructions in the documentation.</br>
 Clone this repository to your system with the following command:
