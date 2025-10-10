@@ -1,5 +1,7 @@
 # Simple incident logger<br/>
 
+<p>This is a simple incident logger application with very minimal functionality. My main goal is to learn more about docker, jenkin and kubernetes so the application is basically just an example to have something to deploy. I will include more useful features and will try to create a minimal but functional ticketing system once I am satisfied with the devops part.</p>
+
 MySQL database scheme description:<br/>
 
 Database: incident_db<br/>
