@@ -70,7 +70,8 @@ After all pods are ready, find your node's IP and open the exposed port (default
 ```bash
 kubectl get nodes -o wide
 ```
-You can delete the deployments with the following command (⚠️ This will also delete the underlying PVC so all your data in the MySQL database will be lost! ⚠️):
+You can delete the deployments with the following command:<br/>
+⚠️ This will also delete the underlying PVC so all your data in the MySQL database will be lost! ⚠️
 ```bash
 kubectl delete -f k8s/
 ```
