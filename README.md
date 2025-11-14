@@ -82,9 +82,12 @@ kubectl delete deploy,svc -l application=incident-logger
 ---
 
 <h3>🧩 Future plans</h3>
-- Replace NodePort with Ingress<br/>
-- Add user authentication to support a multi-user setup<br/>
-- Extend the frontend with ticket closing, priority modification, and ticket assignment features<br/>
-- Deploy the application on AWS EKS and migrate MySQL to AWS RDS<br/>
-- Refactoring the Jenkins pipeline to push Docker images to AWS ECR for seamless EKS deployment<br/>
-- Utilize AWS SNS and SQS to offload the database and send email notifications for created incidents<br/>
+I plan to migrate this application into a fully serverless AWS architecture in a separate repository to gain hands-on experience with real-world cloud migration patterns.
+The new version will utilize core AWS services such as:<br/>
+- AWS Lambda for backend compute<br/>
+- Amazon API Gateway for the REST API layer<br/>
+- Amazon Aurora Serverless v2 as the relational database<br/>
+- Amazon RDS Proxy for efficient connection management<br/>
+- Amazon S3 + Amazon CloudFront for hosting the frontend<br/>
+- VPC networking and security groups for secure private cloud access<br/>
+This migration project will focus on designing a production-ready, cost-efficient, and scalable architecture based on AWS best practices.
