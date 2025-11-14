@@ -83,11 +83,11 @@ kubectl delete deploy,svc -l application=incident-logger
 
 <h3>🧩 Future plans</h3>
 I plan to migrate this application into a fully serverless AWS architecture in a separate repository to gain hands-on experience with real-world cloud migration patterns.
-The new version will utilize core AWS services such as:<br/>
+The new version will utilize core AWS services such as:<br/><br/>
 - AWS Lambda for backend compute<br/>
 - Amazon API Gateway for the REST API layer<br/>
 - Amazon Aurora Serverless v2 as the relational database<br/>
 - Amazon RDS Proxy for efficient connection management<br/>
 - Amazon S3 + Amazon CloudFront for hosting the frontend<br/>
-- VPC networking and security groups for secure private cloud access<br/>
+- VPC networking and security groups for secure private cloud access<br/><br/>
 This migration project will focus on designing a production-ready, cost-efficient, and scalable architecture based on AWS best practices.
