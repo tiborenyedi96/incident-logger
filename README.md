@@ -81,7 +81,7 @@ kubectl delete deploy,svc -l application=incident-logger
 ```
 ---
 
-<h3>🧩 Future plans</h3>
+<h3>Future plans</h3>
 I plan to migrate this application into a fully serverless AWS architecture in a separate repository to gain hands-on experience with real-world cloud migration patterns.
 The new version will utilize core AWS services such as:<br/><br/>
 - AWS Lambda for backend compute<br/>
